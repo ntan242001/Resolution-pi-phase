@@ -146,7 +146,7 @@ plt.text(-0.8,-1,'$\Delta z ( $', color='k', fontsize=15)
 plt.text(-0.5,-1,'$(C_3 \lambda)^{1/2} $', color='b', fontsize=13)
 plt.text(0.05,-1,', ', color='k', fontsize=15)
 plt.text(0.12,-1,'$(C_5 \lambda^2)^{1/3} $', color='r', fontsize=13)
-plt.text(0.8,-1,' )', color='k', fontsize=15)
+plt.text(0.8,-1,')', color='k', fontsize=15)
 
 # naming the y axis
 plt.ylabel('Resolution (nm)', fontsize=12)
