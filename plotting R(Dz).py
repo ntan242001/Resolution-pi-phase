@@ -120,20 +120,31 @@ with open('R(dz) Gauss G1 spread Step phase object ac_LEEM_E0=11.5.csv', 'r') as
                 delta_z_series6.append(float(row[0])*1e-6)
                 resolution_list6.append(float(row[1]))    
     csvfile.close()
+
+delta_z_series1 = np.array(delta_z_series1)
+delta_z_series2 = np.array(delta_z_series2)
+delta_z_series3 = np.array(delta_z_series3)
+delta_z_series4 = np.array(delta_z_series4)
+delta_z_series5 = np.array(delta_z_series5)
+delta_z_series6 = np.array(delta_z_series6)
+
+
+
     
 size=5
 
-plt.scatter(delta_z_series1/(C_3*lamda)**(1/2), resolution_list1, label = 'Gaussian', s=size, c='b', marker='o')
-# plt.scatter(delta_z_series2/(C_3*lamda)**(1/2), resolution_list2, label = 'FN', s=20, c='b', marker='o')
-# plt.scatter(delta_z_series3/(C_3*lamda)**(1/2), resolution_list3, label = 'G1', s=20, c='b', marker='o')
 
-plt.scatter(delta_z_series4/(C_5*lamda**2)**(1/3), resolution_list4, label = 'acGaussian', s=size, c='r', marker='o')
-# plt.scatter(delta_z_series5/(C_5*lamda**2)**(1/3), resolution_list5, label = 'acFN', s=20, c='b', marker='o')
-# plt.scatter(delta_z_series6/(C_5*lamda**2)**(1/3), resolution_list6, label = 'acG1', s=20, c='b', marker='o')
+plt.scatter(delta_z_series1/(48.88*1e-6), resolution_list1, label = 'Gaussian', s=size, c='blue', marker='o')
+plt.scatter(delta_z_series2/(48.88*1e-6), resolution_list2, label = 'FN', s=size, c='maroon', marker='o')
+plt.scatter(delta_z_series3/(48.88*1e-6), resolution_list3, label = 'G1', s=size, c='orange', marker='o')
+
+# plt.scatter(delta_z_series4/(48.88*1e-6), resolution_list4, label = 'acGaussian', s=30, c='cyan', marker='o')
+# plt.scatter(delta_z_series5/(48.88*1e-6), resolution_list5, label = 'acFN', s=20, c='green', marker='o')
+# plt.scatter(delta_z_series6/(48.88*1e-6), resolution_list6, label = 'acG1', s=size, c='red', marker='o')
 
 
 plt.ylim(0, 6)
-plt.xlim(-2, 2)
+# plt.xlim(-2, 2)
 
 # plt.xticks(list(xticks))
 
@@ -149,6 +160,7 @@ plt.text(0.12,-1,'$(C_5 \lambda^2)^{1/3} $', color='r', fontsize=13)
 plt.text(0.8,-1,')', color='k', fontsize=15)
 
 # naming the y axis
+# plt.xlabel('Defocus current (mA)')
 plt.ylabel('Resolution (nm)', fontsize=12)
 plt.legend(bbox_to_anchor=(1, 1))
 
